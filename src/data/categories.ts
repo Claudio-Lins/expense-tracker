@@ -2,22 +2,7 @@ import { Category } from '../types/Category';
 
 
 export const categories: Category = {
-    food: 
-    {
-        title: 'Food',
-        color: '#ff0000',
-        expense: true,
-    },
-    rent: 
-    {
-        title: 'Renda',
-        color: '#00ff00',
-        expense: true,
-    },
-    salary: 
-    {
-        title: 'Salário',
-        color: '#0000ff',
-        expense: false,
-    },
+    food: { title: 'Alimentação', color: 'blue', expense: true },
+    rent: { title: 'Aluguel', color: 'brown', expense: true },
+    salary: { title: 'Salário', color: 'green', expense: false }
 }
