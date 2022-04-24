@@ -7,11 +7,13 @@ import { items } from '../data/items'
 import { categories } from '../data/categories'
 import { useEffect, useState } from 'react'
 import { getCurrentMonth, filterListByMonth } from '../helpers/dateFilter'
+import { TableArea } from '../components/TableArea'
 
 const Home: NextPage = () => {
   const [list, setList] = useState(items)
   const [filteredList, setFilteredList] = useState<Item[]>([])
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
+
 
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth))
@@ -29,13 +31,7 @@ const Home: NextPage = () => {
         {/* Input */}
         
         {/* List */}
-        {list.map((item: Item, i) => (
-          <div key={i} className='flex flex-col items-center mb-10'>
-            {item.title}
-            {item.category}
-            {item.amount}
-          </div>
-        ))}
+        <TableArea list={filteredList} />
 
       </div>
     </div>
