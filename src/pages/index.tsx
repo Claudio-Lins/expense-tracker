@@ -20,6 +20,10 @@ const Home: NextPage = () => {
     setFilteredList(filterListByMonth(list, currentMonth))
   }, [list, currentMonth])
 
+  const handlerMonthChange = (newMonth: string) => {
+    setCurrentMonth(newMonth)
+  }
+
   return (
     <div id="container">
       <div id="header" className='bg-purple-700 h-40 shadow shadow-purple-700/50'>
@@ -28,7 +32,10 @@ const Home: NextPage = () => {
       <div id="content" className='max-w-5xl mx-auto mb-10'>
 
         {/* Resumo */}
-        <InfoArea currentMonth={currentMonth} />
+        <InfoArea
+          onMonthChange={handlerMonthChange}
+          currentMonth={currentMonth}
+        />
           
         {/* Input */}
         
