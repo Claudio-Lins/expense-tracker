@@ -8,7 +8,7 @@ type Props = {
 
 export function TableArea({ list }: Props) {
   return (
-    <table className="mt-10 w-full table-auto overflow-hidden rounded-lg bg-white p-4 shadow-md">
+    <table className="mt-10 w-full table-auto overflow-hidden rounded-lg bg-white shadow-md">
       <thead>
         <tr className="">
           <th className="w-36 p-4 text-xl text-left">Data</th>

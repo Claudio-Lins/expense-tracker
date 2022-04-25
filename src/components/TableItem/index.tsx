@@ -8,7 +8,6 @@ type Props = {
 }
 
 export function TableItem({ item, index }: Props) {
-  console.log(categories[item.category]?.title)
   return (
     <tr className={`${index % 2 === 0 ? 'bg-purple-200' : 'bg-white'} `}>
       <td className="p-4">

@@ -8,6 +8,7 @@ import { categories } from '../data/categories'
 import { useEffect, useState } from 'react'
 import { getCurrentMonth, filterListByMonth } from '../helpers/dateFilter'
 import { TableArea } from '../components/TableArea'
+import { InfoArea } from '../components/InfoArea'
 
 const Home: NextPage = () => {
   const [list, setList] = useState(items)
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
       <div id="content" className='max-w-5xl mx-auto mb-10'>
 
         {/* Resumo */}
+        <InfoArea currentMonth={currentMonth} />
           
         {/* Input */}
         
