@@ -13,5 +13,12 @@ export const items: Item[] = [
     { date: new Date('2022-04-13'), category: 'food', title: 'Pizza', amount: 90.50 },
     { date: new Date('2022-04-18'), category: 'rent', title: 'Renda', amount: 600.00 },
     { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 600.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 700.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 600.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 500.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 400.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 300.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 200.00 },
+    { date: new Date('2022-03-18'), category: 'rent', title: 'Renda', amount: 100.00 },
     { date: new Date('2022-04-11'), category: 'salary', title: 'Salario', amount: 4500.00 }
 ]
