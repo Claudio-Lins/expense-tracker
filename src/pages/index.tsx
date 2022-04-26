@@ -12,6 +12,15 @@ import { InfoArea } from '../components/InfoArea'
 import Modal from 'react-modal'
 
 const Home: NextPage = () => {
+
+
+  var weekday = new Intl.DateTimeFormat(["pt-PT"], {
+      weekday: "short"
+  }).format(new Date());
+  console.log(weekday);
+
+
+
   const [isResumeOpen, setIsResumeOpen] = useState(false)
 
   const [list, setList] = useState(items)
