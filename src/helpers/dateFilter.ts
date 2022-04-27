@@ -9,11 +9,11 @@ export const getCurrentMonth = () => {
 
 export const getCurrentWeek = () => {
 
-  let currentdate: any = new Date();
-  var oneJan: any = new Date(currentdate.getFullYear(), 0, 1);
-  var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
-  var result = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
-  console.log(`The week number is ${result}.`);
+  let currentdate = new Date();
+  var oneJan = new Date(currentdate.getFullYear(), 0, 1);
+  var numberOfDays = Math.floor((Number(currentdate) - Number(oneJan)) / (24 * 60 * 60 * 1000));
+  var weekNum = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
+    return weekNum   
 }
 
 export const filterListByMonth = (list: Item[], date: string): Item[] => {

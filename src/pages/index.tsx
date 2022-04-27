@@ -21,9 +21,7 @@ const Home: NextPage = () => {
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [currentWeek, setCurrentWeek] = useState(getCurrentWeek())
   
-  console.log('currentWeek: ', getCurrentWeek)
-  console.log(typeof getCurrentWeek)
-  console.log(currentMonth)
+ 
 
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth))
@@ -103,7 +101,10 @@ const Home: NextPage = () => {
         >
           Resume
         </button>
-          Semana: {currentWeek}
+          <div className="flex flex-col">
+          <div className="">Ano/mês: {currentMonth}</div>
+          <div className="">Semana: {currentWeek}</div>
+          </div>
 
         {/* Input */}
 
