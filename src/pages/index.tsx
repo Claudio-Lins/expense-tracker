@@ -6,7 +6,7 @@ import { Category } from '../types/Category'
 import { items } from '../data/items'
 import { categories } from '../data/categories'
 import { useEffect, useState } from 'react'
-import { getCurrentMonth, getCurrentWeek, filterListByMonth } from '../helpers/dateFilter'
+import { getCurrentMonth, getCurrentWeek, filterListByMonth, getCurrentDay } from '../helpers/dateFilter'
 import { TableArea } from '../components/TableArea'
 import { InfoArea } from '../components/InfoArea'
 import Modal from 'react-modal'
@@ -20,6 +20,7 @@ const Home: NextPage = () => {
   const [filteredList, setFilteredList] = useState<Item[]>([])
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [currentWeek, setCurrentWeek] = useState(getCurrentWeek())
+  const [currentDay, setCurrentDay] = useState(getCurrentDay())
   
  
 
@@ -104,6 +105,7 @@ const Home: NextPage = () => {
           <div className="flex flex-col">
           <div className="">Ano/mês: {currentMonth}</div>
           <div className="">Semana: {currentWeek}</div>
+          <div className="">Dia: {currentDay}</div>
           </div>
 
         {/* Input */}

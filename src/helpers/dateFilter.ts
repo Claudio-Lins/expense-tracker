@@ -16,6 +16,11 @@ export const getCurrentWeek = () => {
     return weekNum   
 }
 
+export const getCurrentDay = () => {
+    let now = new Date();
+    return now.getDate()
+}
+
 export const filterListByMonth = (list: Item[], date: string): Item[] => {
     let newList: Item[] = [];
     let [year, month] = date.split('-');
