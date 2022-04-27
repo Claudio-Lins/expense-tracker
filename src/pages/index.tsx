@@ -6,17 +6,24 @@ import { Category } from '../types/Category'
 import { items } from '../data/items'
 import { categories } from '../data/categories'
 import { useEffect, useState } from 'react'
-import { getCurrentMonth, filterListByMonth } from '../helpers/dateFilter'
+import { getCurrentMonth, getCurrentWeek, filterListByMonth } from '../helpers/dateFilter'
 import { TableArea } from '../components/TableArea'
 import { InfoArea } from '../components/InfoArea'
 import Modal from 'react-modal'
 
 const Home: NextPage = () => {
-  const [isResumeOpen, setIsResumeOpen] = useState(false)
 
+  
+  const [isResumeOpen, setIsResumeOpen] = useState(false)
+  
   const [list, setList] = useState(items)
   const [filteredList, setFilteredList] = useState<Item[]>([])
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
+  const [currentWeek, setCurrentWeek] = useState(getCurrentWeek())
+  
+  console.log('currentWeek: ', getCurrentWeek)
+  console.log(typeof getCurrentWeek)
+  console.log(currentMonth)
 
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth))
@@ -25,6 +32,7 @@ const Home: NextPage = () => {
   const handlerMonthChange = (newMonth: string) => {
     setCurrentMonth(newMonth)
   }
+
 
   function handleOpneResumeModal() {
     setIsResumeOpen(true)
@@ -82,7 +90,7 @@ const Home: NextPage = () => {
           <TableArea list={filteredList} />
           <div className="flex items-center justify-center">
             <button
-              onClick={handleOpneResumeModal}
+              onClick={handleCloseResumeModal}
               className="mt-10 w-full md:w-1/3 rounded-xl bg-red-600 py-2 px-4 font-bold text-white hover:bg-purple-700"
             >
               Fechar
@@ -95,6 +103,7 @@ const Home: NextPage = () => {
         >
           Resume
         </button>
+          Semana: {currentWeek}
 
         {/* Input */}
 

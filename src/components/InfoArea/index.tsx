@@ -4,7 +4,7 @@ import { formatCurrentMonth } from '../../helpers/dateFilter'
 
 type Props = {
   currentMonth: string
-  onMonthChange: (newMonth: string) => void
+  onMonthChange: (newMonth: string,) => void
 }
 
 export function InfoArea({ currentMonth, onMonthChange }: Props) {

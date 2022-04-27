@@ -7,6 +7,15 @@ export const getCurrentMonth = () => {
     return `${now.getFullYear()}-${now.getMonth()+1}`;
 }
 
+export const getCurrentWeek = () => {
+
+  let currentdate: any = new Date();
+  var oneJan: any = new Date(currentdate.getFullYear(), 0, 1);
+  var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
+  var result = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
+  console.log(`The week number is ${result}.`);
+}
+
 export const filterListByMonth = (list: Item[], date: string): Item[] => {
     let newList: Item[] = [];
     let [year, month] = date.split('-');
@@ -22,6 +31,7 @@ export const filterListByMonth = (list: Item[], date: string): Item[] => {
 
     return newList;
 }
+
 
 export const formatDate = (date: Date): string => {
     let year = date.getFullYear();
