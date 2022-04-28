@@ -4,7 +4,7 @@ import { Item } from '../types/Item'
 
 export const getCurrentMonth = () => {
     let now = new Date();
-    return `${now.getFullYear()}-${now.getMonth()+1}`;
+    return `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`;
 }
 
 export const getCurrentWeek = () => {
@@ -23,12 +23,13 @@ export const getCurrentDay = () => {
 
 export const filterListByMonth = (list: Item[], date: string): Item[] => {
     let newList: Item[] = [];
-    let [year, month] = date.split('-');
+    let [year, month, day] = date.split('-');
 
     for(let i in list) {
         if(
             list[i].date.getFullYear() === parseInt(year) &&
-            (list[i].date.getMonth() + 1) === parseInt(month)
+            (list[i].date.getMonth() + 1) === parseInt(month) &&
+            list[i].date.getDate() === parseInt(day)
         ) {
             newList.push(list[i]);
         }

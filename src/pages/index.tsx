@@ -13,16 +13,16 @@ import Modal from 'react-modal'
 
 const Home: NextPage = () => {
 
-  
+
   const [isResumeOpen, setIsResumeOpen] = useState(false)
-  
+
   const [list, setList] = useState(items)
   const [filteredList, setFilteredList] = useState<Item[]>([])
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [currentWeek, setCurrentWeek] = useState(getCurrentWeek())
   const [currentDay, setCurrentDay] = useState(getCurrentDay())
-  
- 
+
+
 
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth))
@@ -96,17 +96,14 @@ const Home: NextPage = () => {
             </button>
           </div>
         </Modal>
-        <button
-          onClick={handleOpneResumeModal}
-          className="rounded-xl bg-purple-600 py-2 px-4 font-bold text-white hover:bg-purple-700"
-        >
-          Resume
-        </button>
-          <div className="flex flex-col">
-          <div className="">Ano/mês: {currentMonth}</div>
-          <div className="">Semana: {currentWeek}</div>
-          <div className="">Dia: {currentDay}</div>
-          </div>
+        <div className="flex flex-col mt-10">
+          <button
+            onClick={handleOpneResumeModal}
+            className="rounded-xl bg-purple-600 py-2 px-4 font-bold text-white hover:bg-purple-700"
+          >
+            Resume
+          </button>
+        </div>
 
         {/* Input */}
 
