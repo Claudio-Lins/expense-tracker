@@ -7,7 +7,7 @@ type Props = {
   onMonthChange: (newMonth: string,) => void
 }
 
-export function InfoArea({ currentMonth, onMonthChange }: Props) {
+export function InfoAreaDay({ currentMonth, onMonthChange }: Props) {
 
   const dia = Intl.DateTimeFormat('pt-PT', { day: 'numeric' }).format(
     new Date(currentMonth)
@@ -20,18 +20,18 @@ export function InfoArea({ currentMonth, onMonthChange }: Props) {
   )
 
   const handlePrevMonth = () => {
-    let [year, month] = currentMonth.split('-');
-    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
-    currentDate.setMonth( currentDate.getMonth() - 1 );
-    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
-}
+    let [year, month, day] = currentMonth.split('-')
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    currentDate.setDate(currentDate.getDate() - 1)
+    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`)
+  }
 
-const handleNextMonth = () => {
-    let [year, month] = currentMonth.split('-');
-    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
-    currentDate.setMonth( currentDate.getMonth() + 1 );
-    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
-}
+  const handleNextMonth = () => {
+    let [year, month, day] = currentMonth.split('-')
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    currentDate.setDate(currentDate.getDate() + 1)
+    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`)
+  }
 
   return (
     <>
@@ -46,6 +46,7 @@ const handleNextMonth = () => {
             className="cursor-pointer text-purple-600"
           />
           <div className="flex flex-col bg-white items-center justify-center -space-y-1 rounded-lg border p-2 font-bold uppercase text-purple-600 shadow-md">
+            <div>{dia}</div>
             <div>{mes.slice(0, 3)}</div>
             <div>{ano}</div>
           </div>

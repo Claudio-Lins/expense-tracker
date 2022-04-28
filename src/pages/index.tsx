@@ -6,7 +6,7 @@ import { Category } from '../types/Category'
 import { items } from '../data/items'
 import { categories } from '../data/categories'
 import { useEffect, useState } from 'react'
-import { getCurrentMonth, getCurrentWeek, filterListByMonth, getCurrentDay } from '../helpers/dateFilter'
+import { getCurrentMonth, getCurrentWeek, filterListByMonth, filterListByDay, getCurrentDay } from '../helpers/dateFilter'
 import { TableArea } from '../components/TableArea'
 import { InfoArea } from '../components/InfoArea'
 import Modal from 'react-modal'
@@ -18,11 +18,16 @@ const Home: NextPage = () => {
 
   const [list, setList] = useState(items)
   const [filteredList, setFilteredList] = useState<Item[]>([])
+  const [filteredListByDay, setFilteredListByDay] = useState<Item[]>([])
   const [currentMonth, setCurrentMonth] = useState(getCurrentMonth())
   const [currentWeek, setCurrentWeek] = useState(getCurrentWeek())
   const [currentDay, setCurrentDay] = useState(getCurrentDay())
 
 
+
+  useEffect(() => {
+    setFilteredListByDay(filterListByDay(list, currentMonth))
+  }, [list, currentMonth])
 
   useEffect(() => {
     setFilteredList(filterListByMonth(list, currentMonth))
@@ -104,6 +109,9 @@ const Home: NextPage = () => {
             Resume
           </button>
         </div>
+        <pre>
+          {JSON.stringify(filterListByDay, null, 2)}
+        </pre>
 
         {/* Input */}
 

@@ -9,7 +9,7 @@ import {Item} from '../types/Item'
 
 export const items: Item[] = [
     { date: new Date('2022-05-18'), category: 'food', title: 'McDonalds', amount: 10.00 },
-    { date: new Date('2022-04-18'), category: 'food', title: 'Pizza', amount: 32.50 },
+    { date: new Date('2022-03-18'), category: 'food', title: 'Pizza', amount: 32.50 },
     { date: new Date('2022-04-19'), category: 'food', title: 'Pizza', amount: 90.50 },
     { date: new Date('2022-04-20'), category: 'rent', title: 'Renda', amount: 600.00 },
     { date: new Date('2022-04-21'), category: 'rent', title: 'Renda', amount: 600.00 },

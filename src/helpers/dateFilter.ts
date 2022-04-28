@@ -21,7 +21,7 @@ export const getCurrentDay = () => {
     return now.getDate()
 }
 
-export const filterListByMonth = (list: Item[], date: string): Item[] => {
+export const filterListByDay = (list: Item[], date: string): Item[] => {
     let newList: Item[] = [];
     let [year, month, day] = date.split('-');
 
@@ -30,6 +30,22 @@ export const filterListByMonth = (list: Item[], date: string): Item[] => {
             list[i].date.getFullYear() === parseInt(year) &&
             (list[i].date.getMonth() + 1) === parseInt(month) &&
             list[i].date.getDate() === parseInt(day)
+        ) {
+            newList.push(list[i]);
+        }
+    }
+
+    return newList;
+}
+
+export const filterListByMonth = (list: Item[], date: string): Item[] => {
+    let newList: Item[] = [];
+    let [year, month] = date.split('-');
+
+    for(let i in list) {
+        if(
+            list[i].date.getFullYear() === parseInt(year) &&
+            (list[i].date.getMonth() + 1) === parseInt(month)
         ) {
             newList.push(list[i]);
         }
