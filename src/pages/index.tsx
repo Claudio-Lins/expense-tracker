@@ -58,7 +58,7 @@ const Home: NextPage = () => {
       </div>
       <div id="content" className="mx-auto mb-10 max-w-5xl">
         {/* Resumo */}
-        <Modal
+        {/* <Modal
           ariaHideApp={false}
           isOpen={isResumeOpen}
           onRequestClose={handleCloseResumeModal}
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
               Fechar
             </button>
           </div>
-        </Modal>
+        </Modal> */}
         <div className="flex flex-col mt-10">
           <button
             onClick={handleOpneResumeModal}
