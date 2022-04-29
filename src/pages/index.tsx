@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import { getCurrentMonth, getCurrentWeek, filterListByMonth, filterListByDay, getCurrentDay } from '../helpers/dateFilter'
 import { TableArea } from '../components/TableArea'
 import { InfoArea } from '../components/InfoArea'
-import Modal from 'react-modal'
+import { ModalComponent } from '../components/assets/Modal'
 
 const Home: NextPage = () => {
 
@@ -57,35 +57,11 @@ const Home: NextPage = () => {
         </h1>
       </div>
       <div id="content" className="mx-auto mb-10 max-w-5xl">
-        {/* Resumo */}
-        {/* <Modal
-          ariaHideApp={false}
-          isOpen={isResumeOpen}
-          onRequestClose={handleCloseResumeModal}
-          style={{
-            overlay: {
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: 'rgba(10, 10, 10, 0.95)',
-            },
-            content: {
-              position: 'absolute',
-              margin: 'auto',
-              width: '95%',
-              height: '90%',
-              top: '50%',
-              left: '50%',
-              right: 'auto',
-              bottom: 'auto',
-              // marginRight: '-50%',
-              transform: 'translate(-50%, -50%)',
-              border: '1px solid #ccc',
-              background: '#fff',
-            },
-          }}
+        <ModalComponent
+        ariaHideApp={false}
+        isOpen={isResumeOpen}
+        onRequestClose={handleCloseResumeModal}
+          
         >
           <InfoArea
             onMonthChange={handlerMonthChange}
@@ -100,7 +76,10 @@ const Home: NextPage = () => {
               Fechar
             </button>
           </div>
-        </Modal> */}
+        </ModalComponent>
+        
+        {/* Resumo */}
+       
         <div className="flex flex-col mt-10">
           <button
             onClick={handleOpneResumeModal}

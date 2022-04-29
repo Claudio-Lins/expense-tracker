@@ -1,15 +1,13 @@
+import { ReactNode } from "react"
+import Modal from 'react-modal'
 
-type ModalProps = {
-    children: ReactNode
-    isOpen:
-}
 
-export function Modal({chidren}: React.ReactNode) {
+export function ModalComponent({ children, ariaHideApp, isOpen, onRequestClose }) {
     return (
         <Modal
-          ariaHideApp={false}
-          isOpen={isResumeOpen}
-          onRequestClose={handleCloseResumeModal}
+          ariaHideApp={ariaHideApp}
+          isOpen={isOpen}
+          onRequestClose={onRequestClose}
           style={{
             overlay: {
               position: 'fixed',
